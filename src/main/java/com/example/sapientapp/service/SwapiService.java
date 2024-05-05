@@ -31,17 +31,14 @@ public class SwapiService {
 
     private String swapiBaseUrl = "https://swapi.dev/api/";
 
-    private final RestTemplate restTemplate;
 
-    public SwapiService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+
+    public SwapiService() {}
 
     @Autowired
     private CacheManager cacheManager;
 
 
-    @Cacheable(value = "PersonResponse", unless = "#result != null")
     public <T> Object fetchDataFromSwapiService(String endpoint,String search) throws IOException {
         System.out.println("back end fetch "+endpoint);
         try {
@@ -110,6 +107,7 @@ public class SwapiService {
             }
         } catch (IOException e) {
             //throw new IOException();
+            System.out.println("From Cache");
             Cache cache = cacheManager.getCache("PersonResponse");
             PersonResponse response = (PersonResponse) ((search==null)?(cache.get("PersonResponse",PersonResponse.class)):(cache.get(search,PersonResponse.class)) );
             return response;

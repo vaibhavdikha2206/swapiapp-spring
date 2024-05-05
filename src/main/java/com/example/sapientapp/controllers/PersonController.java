@@ -35,7 +35,7 @@ public class PersonController {
     }
 
     @GetMapping("/people/search")
-    //@Cacheable(value = "PersonResponse", unless = "#result != null")
+    @Cacheable(value = "PersonResponse", unless = "#result != null")
     public PersonResponse searchPeopleByName(@RequestParam String name) throws IOException {
         String encodedName = URLEncoder.encode(name, "UTF-8");
         PersonResponse result = (PersonResponse) swapiService.fetchDataFromSwapiService("people/?search=" + encodedName,encodedName);
