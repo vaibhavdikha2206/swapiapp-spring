@@ -26,7 +26,6 @@ public class PersonController {
     private CacheService cacheManager;
 
     @GetMapping("/people")
-    //@Cacheable(value = "PersonResponse", unless = "#result != null")
     @Cacheable(value = "PersonResponse", unless = "#result != null")
     public PersonResponse getAllPeople() throws IOException {
         PersonResponse result = (PersonResponse) swapiService.fetchDataFromSwapiService("people",null);
