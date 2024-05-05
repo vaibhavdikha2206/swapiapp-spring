@@ -1,4 +1,4 @@
-![WhatsApp Image 2024-05-05 at 09 48 54_4ee10178](https://github.com/vaibhavdikha2206/swapiapp-spring/assets/56227319/da109518-ee2d-451b-88c7-44ec5a9a721b)This is a process API Layer midway between the main UI React App and the SWAPI api service . 
+This is a process API Layer midway between the main UI React App and the SWAPI api service . 
 It supports offline functionality as well using cache .
 
 The architecture followed in this project is MVC
