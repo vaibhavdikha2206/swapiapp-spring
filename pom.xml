@@ -48,6 +48,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>Docker-Jenkins-Integration</finalName>
 	</build>
 
 </project>
