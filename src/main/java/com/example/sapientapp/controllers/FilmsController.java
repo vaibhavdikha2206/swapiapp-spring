@@ -24,6 +24,11 @@ public class FilmsController {
         return (FilmsResponse) swapiService.fetchDataFromSwapiService("films",null);
     }
 
+    @GetMapping("/test")
+    public String getString() throws IOException {
+        return "Test";
+    }
+
     @GetMapping("/films/search")
     public FilmsResponse searchFilmByName(@RequestParam String name) throws IOException {
         String encodedName = URLEncoder.encode(name, "UTF-8");
