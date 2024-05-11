@@ -26,7 +26,7 @@ public class FilmsController {
 
     @GetMapping("/test")
     public String getString() throws IOException {
-        return "Test123";
+        return "Test Sapient";
     }
 
     @GetMapping("/films/search")
